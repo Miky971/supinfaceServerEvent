@@ -15,4 +15,33 @@ GET     /public/                                staticDir:public
 GET     /admin/?                                Admin.index
 *       /crud                                  module:crud
 
-GET 	/auth/{login}/{password}				Auth.login(format:'json')									
+GET 	/auth/{login}/{password}				Auth.login(format:'json')	
+
+#===============  Event Browser 
+#= Show all
+GET		/event/showall/								Events.showAllEvent()
+#= Show Selected Event
+*		/event/showthis/{eventID}					Events.showThisEvent()
+#= Remove Selected Event
+GET		/event/removethis/{eventID}					Events.removeEvent()
+#= Update Selected Event
+GET		/event/updatethis/{eventID}					Events.updateEvent()
+#= Update Selected Event
+GET		/event/New/{title}/{start}					Events.createEvent()
+
+#= Update Selected Event Full
+GET		/event/New/{title}/{start}/{end}/{desc}/{place}	Events.createEventFull()
+
+#=============== Test Page binding
+#= Update Selected Event
+GET		/event/test/								Events.testHTML()
+
+#===============  Event Mobile JSON rendering 
+#= Show all
+GET		/event/mobile/showall/								Events.showAllEvent_JSON(format:'json')
+#= Show Selected Event
+*		/event/mobile/showthis/{eventID}					Events.showThisEvent_JSON(format:'json')
+#= Remove Selected Event
+GET		/event/mobile/removethis/{eventID}					Events.removeEvent(format:'json')
+#= Update Selected Event
+GET		/event/mobile/updatethis/{eventID}					Events.updateEvent(format:'json')
