@@ -29,8 +29,11 @@ GET		/event/updatethis/{eventID}					Events.updateEvent()
 #= Update Selected Event
 GET		/event/New/{title}/{start}					Events.createEvent()
 
+#= Update create Event Full
+GET		/event/New/{title}/{start}/{end}/{desc}/{place}/{creator_id}	Events.createEventFull()
+
 #= Update Selected Event Full
-GET		/event/New/{title}/{start}/{end}/{desc}/{place}	Events.createEventFull()
+GET		/event/update/{event}   					Events.updateEventFull()
 
 #=============== Test Page binding
 #= Update Selected Event
@@ -45,3 +48,4 @@ GET		/event/mobile/showall/								Events.showAllEvent_JSON(format:'json')
 GET		/event/mobile/removethis/{eventID}					Events.removeEvent(format:'json')
 #= Update Selected Event
 GET		/event/mobile/updatethis/{eventID}					Events.updateEvent(format:'json')
+
